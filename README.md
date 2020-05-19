@@ -1,5 +1,7 @@
 # notes
 
+An app for keeping track of quotes that you find on various webpages. Created to practice Vue framework.
+
 ## Project setup
 ```
 yarn install
@@ -19,6 +21,3 @@ yarn build
 ```
 yarn lint
 ```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
