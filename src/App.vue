@@ -1,19 +1,34 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <Note :notes='notes' text="hello everyone a note!"/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Note from './components/Note.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    Note
+  },
+  data() {
+    return {
+      notes: [
+        {
+          text: 'a note',
+          quote: 'a thousand years',
+          url: 'https://google.com'
+        },
+        {
+          text: 'a second note',
+          quote: 'a thousand years',
+          url: 'https://google.com'
+        }
+      ]
+    }
   }
-}
+  }
 </script>
 
 <style>
