@@ -1,34 +1,53 @@
+<style>
+  :root {
+    --back: #cde7c2;
+    --text: #25224A;
+    --highlight: #69D8C4;
+    --blueHighlight: #3E50F5;
+    --white: #D9E0F5;
+  }
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    background: var(--back);
+    margin-top: 0px;
+  }
+</style>
 <template>
   <div id="app">
-    <Note :notes='notes' text="hello everyone a note!"/>
+    <h1>Saved Musings...</h1>
+    <Notes :getNotes='getNotes' :notes='notes' text="hello everyone a note!"/>
   </div>
 </template>
 
 <script>
-import Note from './components/Note.vue'
+import Notes from './components/Notes.vue'
 
 export default {
   name: 'App',
   components: {
-    Note
+    Notes
+  },
+  methods: {
+  getNotes() {
+    fetch('http://localhost:3000/notes').then(res => {
+      return res.json();
+    }).then(json => {
+      console.log(json);
+      this.notes = json.data;
+    })
+  },
   },
   data() {
     return {
-      notes: [
-        {
-          text: 'a note',
-          quote: 'a thousand years',
-          url: 'https://google.com'
-        },
-        {
-          text: 'a second note',
-          quote: 'a thousand years',
-          url: 'https://google.com'
-        }
-      ]
+      notes: []
     }
+  },
+  mounted() {
+    this.getNotes()
   }
-  }
+}
 </script>
 
 <style>
