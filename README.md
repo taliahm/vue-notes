@@ -2,6 +2,9 @@
 
 An app for keeping track of quotes that you find on various webpages. Created to practice Vue framework.
 
+Backend is very basic Node server with Mongodb. Backend dependencies not listed in package.json, will need to install them yourself: mongodb
+
+
 ## Project setup
 ```
 yarn install
@@ -21,3 +24,10 @@ yarn build
 ```
 yarn lint
 ```
+
+### Running Server
+```
+node server.js
+```
+
+Server will run on port 3000.
