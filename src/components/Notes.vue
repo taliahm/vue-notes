@@ -11,15 +11,7 @@
 <template>
     <section class="hold-note">
     <div v-for="note in notes" :key="note.text">
-        <template v-if="!isEditting">
-            <Note :getNotes='getNotes' :url='note.url' :text='note.text' :quote='note.quote' :id='note._id' />
-        </template>
-        <template v-else>
-            <h2>Edit me!</h2>
-            <input v-model="textEdit" />
-             <input v-model="quoteEdit" />
-            <button v-on:click="save">Save!</button>
-        </template>
+        <Note :getNotes='getNotes' :url='note.url' :text='note.text' :quote='note.quote' :id='note._id' />
     </div>
     </section>
 </template>
